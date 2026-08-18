@@ -3,7 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Juegos de Mesa</title>
+    <style>
+      body {
+        width: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+      .page {
+        position: relative;
+        height: 100vh;
+      }
+      .container {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .loader {
+        background-color: purple;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 3;
+
+        animation: loader 2s linear forwards;
+      }
+
+      @keyframes loader {
+        0% {
+          opacity: 1;
+          visibility: visible;
+        }
+        95% {
+          opacity: 1;
+          visibility: visible;
+        }
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      .loader div {
+        background: beige;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 10px;
+
+        transform: scale(0);
+
+        animation: scaling 2s ease-in-out infinite;
+      }
+      .loader div:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .loader div:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .loader div:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      @keyframes scaling {
+        0%,
+        100% {
+          transform: scale(0.2);
+        }
+        40% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="page">
@@ -11,34 +86,53 @@
       <section class="container">
         <nav class="navbar">
           <div class="navbar__content">
-            <img src="" alt="" />
+            <img
+              src="https://th.bing.com/th/id/R.d0b8dd84b6ee2dcba75f9788568a100e?rik=NrJfQyay6ExSTw&pid=ImgRaw&r=0"
+              alt=""
+              width="50"
+              height="auto"
+            />
             <ul>
-              <li><a href="/"></a></li>
-              <li><a href="/"></a></li>
-              <li><a href="/"></a></li>
-              <li><a href="/"></a></li>
+              <li><a href="/">Más Vendidos</a></li>
+              <li><a href="/">Cartas</a></li>
+              <li><a href="/">Juegos de Mesa</a></li>
+              <li><a href="/">Ofertas</a></li>
             </ul>
           </div>
         </nav>
+
         <section class="main-content">
-          <p></p>
-          <h1></h1>
-          <p></p>
+          <p>Hechos para</p>
+          <h1>TIRAR LOS DADOS</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            accusantium deleniti similique quis reiciendis laboriosam hic, vel
+            iusto doloribus, numquam eligendi amet ut modi, reprehenderit nobis
+            sapiente commodi tempore laudantium.
+          </p>
         </section>
 
         <section class="side-content">
-          <p></p>
+          <p>Munchking</p>
           <img src="" alt="" />
           <div></div>
         </section>
+
         <section>
+          <!-- Cards -->
+          <div><img src="" alt="" /></div>
+          <div><img src="" alt="" /></div>
           <div><img src="" alt="" /></div>
         </section>
 
         <!-- OTRA ZONA -->
       </section>
       <!-- Loader -->
-      <section></section>
+      <section class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
       <!-- Modal -->
       <section></section>
     </div>
