@@ -26,34 +26,41 @@ body {
     "nav aside"
     "section aside"
     "footer aside";
-
   height: 100%;
   width: 100%;
 }
 
 .loader {
-  background-color: purple;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 3;
+  background-color: purple; /* Color del fondo del Loader */
+  width: 100%; /* Asegura que el Loader cubra todo el ancho de la pantalla del ordenador */
+  height: 100%; /* Asegura que el Loader cubra todo el alto de la pantalla del ordenador */
+  display: flex; /* Ayuda a centrar las bolitas en el centro de la pantalla */
+  align-items: center; /* Ayuda a centrar las bolitas en el centro de la pantalla */
+  justify-content: center; /* Ayuda a centrar las bolitas en el centro de la pantalla */
+  position: absolute; /* Permite que la capa Loader se superponga a los otros elementos. Generando un efecto de "cortina" */
+  z-index: 3; /* Determina la profundidad del elemento en el eje z respecto otros elementos */
 
   animation: loader 2s linear forwards;
+  /* Loader -> Nombre de la animacion (keyframe) */
+  /* 2s -> Indica la duracion de la animacion (2 segundos) */
+  /* linear -> Establace que la velocidad y el tipo de animacion es constante */
+  /* forwards -> Obliga al Loader a quedarse en la configuracion/estado final (opacity: 0 y visibility: Hidden) para no interferir en la navegacion */
 }
 
 @keyframes loader {
+  /* loader es el nombre de la animacion */
   0% {
+    /* El Loader aparece visible del 0% al 95%. Permitiendo que se desvanezca posterior al 95% de la animación */
     opacity: 1;
     visibility: visible;
   }
   95% {
+    /* El Loader aparece visible del 0% al 95%. Permitiendo que se desvanezca posterior al 95% de la animación */
     opacity: 1;
     visibility: visible;
   }
   100% {
+    /* El Loader se vuelve invisible y no interfiere entre la interaccion del usuario con la web. La pagina se termino de cargar */
     opacity: 0;
     visibility: hidden;
   }
@@ -68,6 +75,10 @@ body {
   transform: scale(0);
 
   animation: scaling 2s ease-in-out infinite;
+  /* scaling -> Nombre de la animacion (keyframe) */
+  /* 2s -> Indica la duracion de la animacion (2 segundos). Coincide con el tiempo de duracion del Loader */
+  /* ease-in-out -> Tipo de animacion donde la velocidad del objeto aumenta de manera constante y desacelera casi al final */
+  /* infinite -> Obliga al Loader a repetir la animcion hasta que el Loader se desactive */
 }
 .loader div:nth-child(1) {
   animation-delay: 0.2s;
@@ -78,15 +89,25 @@ body {
 .loader div:nth-child(3) {
   animation-delay: 0.4s;
 }
+
 @keyframes scaling {
-  0%,
+  /* scaling es el nombre de la animacion */
+  0%, /* Valor inicial (0%) y final (100%) del elemento. Indica la escala en la que comienza y finaliza la "pelotita" */
   100% {
-    transform: scale(0.2);
+    transform: scale(
+      0.2
+    ); /* Al inicio y al final de la animación, las bolitas están en su tamaño más pequeño (escala 0.2) para dar la sensación de que casi desaparecen */
   }
   40% {
-    transform: scale(1);
+    /* Punto de control adicional. Agrega más detalle a la animación de la bolita */
+    transform: scale(
+      1
+    ); /* En la mitad del tiempo, las bolitas crecen hasta su tamaño real (escala 1), creando el efecto visual de "pulsación" o crecimiento */
   }
   50% {
-    transform: scale(1);
+    /* Punto de control adicional. Agrega más detalle a la animación de la bolita */
+    transform: scale(
+      1
+    ); /* En la mitad del tiempo, las bolitas crecen hasta su tamaño real (escala 1), creando el efecto visual de "pulsación" o crecimiento */
   }
 }
