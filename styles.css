@@ -16,18 +16,18 @@ body {
   width: 100%;
 }
 .container {
-  position: absolute;
-  z-index: 1;
+  position: absolute; /* Provoca que el elemento se posicione de manera independiente y se superponga al resto de los componentes del layout */
+  z-index: 1; /* Determina la profundidad del elemento en el eje z respecto otros elementos */
 
-  display: grid;
-  grid-template-columns: 55% 45%;
-  grid-template-rows: 20% 50% 30%;
+  display: grid; /* Activa el modelo de cuadrícula */
+  grid-template-columns: 55% 45%; /* Define dos columnas con esos anchos */
+  grid-template-rows: 20% 50% 30%; /* Define tres filas con esas alturas */
   grid-template-areas:
-    "nav aside"
-    "section aside"
-    "footer aside";
-  height: 100%;
-  width: 100%;
+    "nav aside" /* */
+    "section aside" /* Asigna nombres a las celdas para ubicar los elementos */
+    "footer aside"; /* */
+  height: 100%; /* Define el alto del contenedor */
+  width: 100%; /* Define el ancho del contenedor */
 }
 
 .loader {
@@ -35,8 +35,8 @@ body {
   width: 100%; /* Asegura que el Loader cubra todo el ancho de la pantalla del ordenador */
   height: 100%; /* Asegura que el Loader cubra todo el alto de la pantalla del ordenador */
   display: flex; /* Ayuda a centrar las bolitas en el centro de la pantalla */
-  align-items: center; /* Ayuda a centrar las bolitas en el centro de la pantalla */
-  justify-content: center; /* Ayuda a centrar las bolitas en el centro de la pantalla */
+  align-items: center; /* Ayuda a ubicar las bolitas en el centro de la pantalla */
+  justify-content: center; /* Ayuda a ubicar las bolitas en el centro de la pantalla */
   position: absolute; /* Permite que la capa Loader se superponga a los otros elementos. Generando un efecto de "cortina" */
   z-index: 3; /* Determina la profundidad del elemento en el eje z respecto otros elementos */
 
@@ -66,11 +66,12 @@ body {
   }
 }
 .loader div {
-  background: beige;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin: 10px;
+  /* El .loader div, se utiliza para definir las mismas variables/caracteristicas a varios objetos, en este caso bolitas, sin tener que repetir codigo */
+  background: beige; /* Color de las bolitas */
+  width: 40px; /* Ancho de las bolitas en pixeles */
+  height: 40px; /* Alto de las bolitas en pixeles */
+  border-radius: 50%; /* Define el radio que adoptara el borde del objeto, generando el circulo */
+  margin: 10px; /* Margen que separa las bolitas entre si, para que no colisionen */
 
   transform: scale(0);
 
@@ -82,12 +83,15 @@ body {
 }
 .loader div:nth-child(1) {
   animation-delay: 0.2s;
+  /* Le da a la primera bolita un delay de inicio de animacion de 0.2 segundos */
 }
 .loader div:nth-child(2) {
   animation-delay: 0.3s;
+  /* Le da a la segunda bolita un delay de inicio de animacion de 0.3 segundos */
 }
 .loader div:nth-child(3) {
   animation-delay: 0.4s;
+  /* Le da a la tercera bolita un delay de inicio de animacion de 0.4 segundos */
 }
 
 @keyframes scaling {
