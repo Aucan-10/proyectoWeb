@@ -3,6 +3,7 @@
   --yellow: #fdbe2c;
   --red: #c6241b;
   --blue: #05365c;
+  --cream: rgb(230, 230, 211);
 }
 body {
   font-family: "PT Sans", sans-serif;
@@ -30,8 +31,9 @@ body {
   width: 100%; /* Define el ancho del contenedor */
 }
 .navbar {
-  background: grey;
+  background: var(--red);
   grid-area: nav;
+  display: flex;
 }
 .navbar__content {
   display: flex;
@@ -61,12 +63,44 @@ body {
   width: 450px;
 }
 .navbar__content ul li a {
-  color: var(--red);
+  color: var(--blue);
   font-weight: 300;
   text-decoration: none;
 }
+.main-content {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+
+  animation: 2s main-content 0.5s ease-in-out;
+}
+.main-content p:first-child {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 -14px 44px;
+}
+.main-content h1 {
+  font-size: 48px;
+  font-weight: 700px;
+  margin: 0 0 28px 0;
+}
+.main-content p:last-child {
+  font-weight: 100;
+  margin: 0;
+  width: 60%;
+}
+@keyframes main-content {
+  0% {
+    transform: translateY(-600px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .loader {
-  background-color: purple; /* Color del fondo del Loader */
+  background-color: var(--red); /* Color del fondo del Loader */
   width: 100%; /* Asegura que el Loader cubra todo el ancho de la pantalla del ordenador */
   height: 100%; /* Asegura que el Loader cubra todo el alto de la pantalla del ordenador */
   display: flex; /* Ayuda a centrar las bolitas en el centro de la pantalla */
@@ -75,7 +109,7 @@ body {
   position: absolute; /* Permite que la capa Loader se superponga a los otros elementos. Generando un efecto de "cortina" */
   z-index: 3; /* Determina la profundidad del elemento en el eje z respecto otros elementos */
 
-  animation: loader 0s linear forwards;
+  animation: loader 2s linear forwards;
   /* Loader -> Nombre de la animacion (keyframe) */
   /* 2s -> Indica la duracion de la animacion (2 segundos) */
   /* linear -> Establace que la velocidad y el tipo de animacion es constante */
@@ -102,7 +136,7 @@ body {
 }
 .loader div {
   /* El .loader div, se utiliza para definir las mismas variables/caracteristicas a varios objetos, en este caso bolitas, sin tener que repetir codigo */
-  background: beige; /* Color de las bolitas */
+  background: var(--cream); /* Color de las bolitas */
   width: 40px; /* Ancho de las bolitas en pixeles */
   height: 40px; /* Alto de las bolitas en pixeles */
   border-radius: 50%; /* Define el radio que adoptara el borde del objeto, generando el circulo */
