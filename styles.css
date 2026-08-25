@@ -29,7 +29,42 @@ body {
   height: 100%; /* Define el alto del contenedor */
   width: 100%; /* Define el ancho del contenedor */
 }
+.navbar {
+  background: grey;
+  grid-area: nav;
+}
+.navbar__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0px 0px 0px 80px;
 
+  animation: 2s navbar 0.5s ease-in-out;
+}
+@keyframes navbar {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.navbar__content img {
+  width: 75px;
+  height: auto;
+}
+.navbar__content ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  width: 450px;
+}
+.navbar__content ul li a {
+  color: var(--red);
+  font-weight: 300;
+  text-decoration: none;
+}
 .loader {
   background-color: purple; /* Color del fondo del Loader */
   width: 100%; /* Asegura que el Loader cubra todo el ancho de la pantalla del ordenador */
@@ -40,7 +75,7 @@ body {
   position: absolute; /* Permite que la capa Loader se superponga a los otros elementos. Generando un efecto de "cortina" */
   z-index: 3; /* Determina la profundidad del elemento en el eje z respecto otros elementos */
 
-  animation: loader 2s linear forwards;
+  animation: loader 0s linear forwards;
   /* Loader -> Nombre de la animacion (keyframe) */
   /* 2s -> Indica la duracion de la animacion (2 segundos) */
   /* linear -> Establace que la velocidad y el tipo de animacion es constante */
