@@ -30,6 +30,130 @@ body {
   height: 100%; /* Define el alto del contenedor */
   width: 100%; /* Define el ancho del contenedor */
 }
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .page {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "nav"
+      "section"
+      "aside";
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .navbar {
+    min-height: 90px;
+  }
+
+  .navbar__content {
+    padding: 0 20px;
+    justify-content: center;
+  }
+
+  .navbar__content img {
+    width: 60px;
+  }
+
+  .navbar__content ul {
+    width: 100%;
+    margin-left: 15px;
+    gap: 15px;
+  }
+
+  .main-content {
+    padding: 60px 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-content p:first-child {
+    font-size: 28px;
+    margin: 0 0 -10px 0;
+  }
+
+  .main-content h1 {
+    font-size: 38px;
+    margin: 0 0 20px 0;
+  }
+
+  .main-content p:last-child {
+    width: 90%;
+  }
+
+  .side-content {
+    min-height: 400px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .side-content p {
+    font-size: 28px;
+  }
+
+  .side-content img {
+    width: 100%;
+  }
+
+  .side-content div {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar__content {
+    padding: 0 15px;
+  }
+
+  .navbar__content img {
+    width: 50px;
+  }
+
+  .navbar__content ul {
+    gap: 8px;
+    margin-left: 8px;
+  }
+
+  .navbar__content ul li a {
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 50px 20px;
+  }
+
+  .main-content p:first-child {
+    font-size: 24px;
+  }
+
+  .main-content h1 {
+    font-size: 32px;
+  }
+
+  .main-content p:last-child {
+    width: 100%;
+  }
+
+  .side-content {
+    min-height: 300px;
+  }
+
+  .side-content p {
+    font-size: 22px;
+  }
+}
 .navbar {
   background: var(--red);
   grid-area: nav;
