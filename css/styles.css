@@ -40,7 +40,6 @@ p {
   padding: 0 20px;
 }
 
-/* Grid */
 #grid {
   padding: 40px 0;
   height: 100vh;
@@ -69,13 +68,12 @@ p {
 .box-2 {
   background: var(--yellow);
 }
-
 .box-1,
 .box-9,
 .box-6 {
   background: var(--blue);
+  color: white;
 }
-
 .box-3,
 .box-5,
 .box-8 {
@@ -83,7 +81,6 @@ p {
 }
 
 .box-1 {
-  color: white;
   text-align: left;
   border-radius: 20px;
   grid-column: 1/3;
@@ -92,41 +89,32 @@ p {
 
 .box-2 {
   grid-column: 3;
-  /* grid-column: 3/4; */
   grid-row: 1;
-  /* grid-row: 1/2; */
 }
-
 .box-3 {
   grid-column: 4;
   grid-row: 1;
 }
-
 .box-4 {
   grid-column: 3;
   grid-row: 2;
 }
-
 .box-5 {
   grid-column: 4;
   grid-row: 2;
 }
-
 .box-6 {
   grid-column: 1;
   grid-row: 3;
 }
-
 .box-7 {
   grid-column: 2;
   grid-row: 3;
 }
-
 .box-8 {
   grid-column: 3;
   grid-row: 3;
 }
-
 .box-9 {
   grid-column: 4;
   grid-row: 3;
@@ -143,4 +131,53 @@ p {
   border-radius: 50%;
   height: 250px;
   width: 250px;
+}
+
+@media (max-width: 768px) {
+  #grid {
+    height: auto;
+  }
+
+  .grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .box {
+    padding: 30px;
+    margin: 0 auto;
+  }
+
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4,
+  .box-5,
+  .box-6,
+  .box-7,
+  .box-8,
+  .box-9 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .box-1 {
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  .box-2,
+  .box-3,
+  .box-4,
+  .box-5,
+  .box-6,
+  .box-7,
+  .box-8,
+  .box-9 {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
 }
