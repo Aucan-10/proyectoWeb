@@ -276,6 +276,71 @@ body {
   grid-row: 1 / 2;
   height: 100%;
 }
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+
+  background: var(--blue);
+  border-radius: 0 50px 0 0;
+  transform: translateY(100%);
+
+  animation-name: footer;
+  animation-duration: 0.5s;
+  animation-delay: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes footer {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.footer div {
+  background: var(--yellow);
+  width: 175px;
+  height: 50%;
+  border-radius: 20px 20px 0 0;
+  display: flexbox;
+  justify-content: center;
+}
+.footer div img {
+  /* width: 175px; */
+  height: auto;
+  position: absolute;
+
+  transform: translateY(0px) scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+.footer div:hover img {
+  cursor: pointer;
+  transform: translateY(-20px) scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer .catan img {
+  width: 130px;
+  height: auto;
+  bottom: 28px;
+  left: 12%;
+}
+
+.footer .gloomhaven img {
+  width: 200px;
+  height: auto;
+  bottom: 15px;
+  left: 38%;
+}
+
+.footer .exploding-kittens img {
+  width: 210px;
+  height: auto;
+  bottom: 45px;
+  left: 68%;
+}
 .loader {
   background-color: var(--red); /* Color del fondo del Loader */
   width: 100%; /* Asegura que el Loader cubra todo el ancho de la pantalla del ordenador */
