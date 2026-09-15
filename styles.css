@@ -426,3 +426,16 @@ body {
     ); /* En la mitad del tiempo, las bolitas crecen hasta su tamaño real (escala 1), creando el efecto visual de "pulsación" o crecimiento */
   }
 }
+.hidden {
+  display: none;
+}
+.visible {
+  display: grid;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 4;
+}
