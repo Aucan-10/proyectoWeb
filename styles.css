@@ -427,10 +427,10 @@ body {
   }
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 .visible {
-  display: grid;
+  display: grid !important;
 }
 .modal {
   width: 100%;
@@ -438,4 +438,12 @@ body {
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 4;
+
+  display: grid;
+  place-items: center;
+}
+.modal__content {
+  background: white;
+  width: 50%;
+  height: 50%;
 }
