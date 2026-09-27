@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
   --yellow: #fdbe2c;
   --red: #c6241b;
@@ -6,7 +6,7 @@
   --cream: rgb(230, 230, 211);
 }
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
   width: 100vw;
   margin: 0;
   overflow: hidden;
@@ -24,9 +24,9 @@ body {
   grid-template-columns: 55% 45%; /* Define dos columnas con esos anchos */
   grid-template-rows: 20% 50% 30%; /* Define tres filas con esas alturas */
   grid-template-areas:
-    "nav aside" /* */
-    "section aside" /* Asigna nombres a las celdas para ubicar los elementos */
-    "footer aside"; /* */
+    'nav aside' /* */
+    'section aside' /* Asigna nombres a las celdas para ubicar los elementos */
+    'footer aside'; /* */
   height: 100%; /* Define el alto del contenedor */
   width: 100%; /* Define el ancho del contenedor */
 }
@@ -48,9 +48,9 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "nav"
-      "section"
-      "aside";
+      'nav'
+      'section'
+      'aside';
     min-height: 100vh;
     height: auto;
   }
@@ -446,4 +446,53 @@ body {
   background: white;
   width: 50%;
   height: 50%;
+  display: grid;
+  place-items: center;
+}
+.modal__content--slider {
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d;
+}
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card {
+  background: var(--blue);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 1.2s ease;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+#radio-1:checked ~ .cards #card-1,
+#radio-2:checked ~ .cards #card-2,
+#radio-3:checked ~ .cards #card-3 {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+#radio-1:checked ~ .cards #card-2,
+#radio-2:checked ~ .cards #card-3,
+#radio-3:checked ~ .cards #card-1 {
+  transform: translateX(40%) scale(0.8);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+#radio-1:checked ~ .cards #card-3,
+#radio-2:checked ~ .cards #card-1,
+#radio-3:checked ~ .cards #card-2 {
+  transform: translateX(-40%) scale(0.8);
+  opacity: 0.5;
+  z-index: 0;
 }
