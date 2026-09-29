@@ -31,15 +31,14 @@
           <p>Hechos para</p>
           <h1>Tirar Los Dados!</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-            accusantium deleniti similique quis reiciendis laboriosam hic, vel
-            iusto doloribus, numquam eligendi amet ut modi, reprehenderit nobis
-            sapiente commodi tempore laudantium.
+            Reúne a tus amigos, prepara la mesa y deja que comience la
+            diversión. Tenemos los mejores juegos de mesa para cada ocasión:
+            desde partidas épicas hasta risas inolvidables.
           </p>
         </section>
 
         <section class="side-content">
-          <p>Munchkin</p>
+          <p id="game-name">Munchkin</p>
           <div></div>
           <img src="./public/munchkin_game.png" alt="munchkin" />
         </section>
@@ -48,8 +47,8 @@
           <div class="catan" id="button1">
             <img src="./public/catan_game.png" alt="Catan" />
           </div>
-          <div class="gloomhaven" id="button2">
-            <img src="./public/gloomhaven_gameboard.png" alt="Gloomhaven" />
+          <div class="munchkin" id="button2">
+            <img src="./public/munchkin_game.png" alt="Munchkin" />
           </div>
           <div class="exploding-kittens" id="button3">
             <img
@@ -67,35 +66,44 @@
         <div></div>
         <div></div>
       </section>
-      <!-- Modal -->
-      <section class="modal hidden">
+      <div class="modal hidden">
         <div class="modal__content">
-          <img
-            class="modal__content--close"
-            src="https://img.icons8.com/?size=100&id=71200&format=png&color=000000"
-            alt="closeButton"
-          />
+          <button class="modal__content--close" aria-label="Cerrar">✕</button>
+
           <div class="modal__content--slider">
-            <input type="radio" name="slider-1" id="radio-1" checked />
-            <input type="radio" name="slider-1" id="radio-2" />
-            <input type="radio" name="slider-1" id="radio-3" />
+            <input type="radio" name="slider" id="radio-1" checked />
+            <input type="radio" name="slider" id="radio-2" />
+            <input type="radio" name="slider" id="radio-3" />
 
             <div class="cards">
-              <label for="radio-1" id="card-1" class="card">
-                <img src="" alt=""
-              /></label>
-
-              <label for="radio-2" id="card-2" class="card">
-                <img src="" alt=""
-              /></label>
-
-              <label for="radio-3" id="card-3" class="card">
-                <img src="" alt=""
-              /></label>
+              <label
+                for="radio-1"
+                class="card"
+                id="card-1"
+                data-name="Munchkin"
+              >
+                <img src="./public/munchkin_game.png" alt="Munchkin" />
+              </label>
+              <label for="radio-2" class="card" id="card-2" data-name="Catan">
+                <img src="./public/catan_game.png" alt="Catan" />
+              </label>
+              <label
+                for="radio-3"
+                class="card"
+                id="card-3"
+                data-name="Exploding Kittens"
+              >
+                <img
+                  src="./public/explodingKittens_game.png"
+                  alt="Exploding Kittens"
+                />
+              </label>
             </div>
           </div>
+
+          <button class="btn-buy">¡Lo quiero!</button>
         </div>
-      </section>
+      </div>
     </div>
   </body>
   <script src="scripts.js"></script>

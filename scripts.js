@@ -20,8 +20,34 @@ button3.addEventListener('click', () => {
 });
 
 closeButton.addEventListener('click', () => {
-  console.log('here');
-
   modal.classList.add('hidden');
   modal.classList.remove('visible');
+  const firstRadio = document.querySelector('#radio-1');
+  if (firstRadio) firstRadio.checked = true;
+});
+
+const btnBuy = document.querySelector('.btn-buy');
+const sideContentImg = document.querySelector('.side-content img');
+const gameName = document.querySelector('#game-name');
+
+btnBuy.addEventListener('click', () => {
+  const selectedRadio = document.querySelector('input[name="slider"]:checked');
+
+  if (selectedRadio) {
+    const radioId = selectedRadio.id;
+    const cardNumber = radioId.split('-')[1];
+    const selectedCard = document.querySelector(`#card-${cardNumber}`);
+
+    if (selectedCard && sideContentImg) {
+      const img = selectedCard.querySelector('img');
+      sideContentImg.src = img.src;
+
+      if (gameName) {
+        gameName.textContent = selectedCard.dataset.name;
+      }
+
+      modal.classList.add('hidden');
+      modal.classList.remove('visible');
+    }
+  }
 });
